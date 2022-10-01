@@ -1,0 +1,158 @@
+WEEK 4:
+1. Write a program in C++ to convert a decimal number into binary without using an
+array and using the constructor and destructor.
+
+ANS:
+
+#include<iostream>
+#include<bits/stdc++.h>
+#include<stdlib.h>
+using namespace std;
+class binary
+{
+public:
+    binary(int);
+};
+binary::binary(int x)
+{
+    char z[200];
+    itoa(x,z,2);
+    cout<<z<<endl;
+};
+int main()
+{
+    int y;
+    cin>>y;
+    binary obj(y);
+    return 0;
+}
+
+3. Write C++ Program to display the cube of the number upto a given integer using
+Destructor.
+
+ANS:
+#include<iostream>
+#include<bits/stdc++.h>
+#include<stdlib.h>
+using namespace std;
+class cubenum
+{
+public:
+    cubenum(int);
+};
+cubenum::cubenum(int y)
+{
+
+    int i;
+    for(i=1;i<=y;i++)
+        cout<<"cube of"<<i<<"="<<i*i*i<<endl;
+
+
+};
+int main()
+{
+    int y;
+    cin>>y;
+    cubenum obj(y);
+    
+    return 0;
+}
+
+4. Write a C++ Program to calculate Volume of Cube using constructor and destructor
+
+ANS:
+
+#include<iostream>
+#include<bits/stdc++.h>
+#include<stdlib.h>
+using namespace std;
+class cube
+{
+public:
+    cube(int);
+};
+cube::cube(int y)
+{
+ //   scanf("%d",&x);
+    int volume;
+    volume=y*y*y;
+    cout<<volume<<endl;
+};
+int main()
+{
+    int y;
+    cin>>y;
+    cube obj(y);
+    //obj.binary(x);
+    return 0;
+}
+
+
+7. Write a C++ Program to display the reverse of a number using the constructor.
+
+ANS:
+
+#include<iostream>
+#include<bits/stdc++.h>
+#include<stdlib.h>
+using namespace std;
+class reversenum
+{
+public:
+    reversenum(int);
+};
+reversenum::reversenum(int y)
+{
+ 
+ int reverses,remainder;
+    while (y != 0) {
+    remainder = y % 10;
+    reverses = reverses * 10 + remainder;
+    y /= 10;
+  }
+    cout<<reverses<<endl;
+};
+int main()
+{
+    int y;
+    cin>>y;
+    reversenum obj(y);
+  
+    return 0;
+}
+
+
+
+
+6. Write a C++ program to find the number and sum of all integer between 100 and 200
+which are divisible by 9 with constructor destructor.
+
+ANS:
+
+#include<iostream>
+using namespace  std;
+class number
+{
+	public:
+		number(int i,int T4Tutorials_Sum)
+		{
+	cout<<"numbers that are divisible by 9 between 100 and 200\n";
+				for(i=101; i<200; i++)
+				if(i%9==0)
+				{
+					cout<<"numbers divisble by 9 is= "<<i<<endl;
+					T4Tutorials_Sum=T4Tutorials_Sum+i;
+				}
+				cout<<"T4Tutorials_Sum of all numbers divisible by 9 is= "<<T4Tutorials_Sum<<endl;
+		}
+		~number()
+		{
+			cout<<"\n destructor completed its work to free up memory"<<endl;
+		}
+};
+int main()
+{
+	number f(101,0);
+}
+
+

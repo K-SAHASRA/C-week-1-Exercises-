@@ -1,0 +1,273 @@
+
+6. Write a C++ program to Swap variables using Function Overloading.
+
+
+#include<iostream>
+using namespace std;
+class swapping
+{
+public:
+    int swap(int a,int b);
+    double swap(double f1,double f2);
+};
+int swapping ::swap(int a,int b)
+{
+    int temp;
+    temp=a;
+    a=b;
+    b=temp;
+}
+double swapping ::swap(double f1,double f2)
+{
+    double temp;
+    temp=f1;
+    f1=f2;
+    f2=temp;
+}
+int main()
+{
+    int a,b;
+    double f1,f2;
+    cout<<"enter the integer numbers"<<endl;
+    cin>>a>>b;
+    cout<<"enter the float numbers"<<endl;
+    cin>>f1>>f2;
+    swap(a,b);
+    swap(f1,f2);
+    cout<<"the numbers after swappping are:"<<endl;
+    cout<<a<<" "<< b<<endl;
+    cout<<f1<<" "<<f2<<endl;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+7. Write a C++ Program to check Palindrome using function overloading.
+#include<iostream>
+using namespace std;
+class shapes
+{
+public:
+    int volume(int a);
+    double volume(double f1);
+    int volume(int h,int r);
+};
+int shapes ::volume(int a)
+{
+    int ans;
+    ans=a*a*a;
+    cout<<ans<<endl;
+    return(-1);
+}
+double shapes ::volume(double f1)
+{
+    double ans;
+    ans=(4/3)*(3.14)*(f1*f1*f1);
+    cout<<ans<<endl;
+    return(-1);
+}
+int shapes ::volume(int h, int r)
+{
+    int ans;
+    ans=(3.14)*r*r*h;
+    cout<<ans<<endl;
+    return(-1);
+}
+int main()
+{
+    int a,h,r;
+    double f1;
+    shapes n;
+    cout<<"enter the side of the cube"<<endl;
+    cin>>a;
+    cout<<"enter the radius of the sphere"<<endl;
+    cin>>f1;
+    cout<<"enter the height and the radius of the cylinder"<<endl;
+    cin>>r>>h;
+     cout<<"the volumes are:"<<endl;
+    n.volume(a);
+    n.volume(f1);
+    n.volume(r,h);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+8. Write a C++ program to find Volume of Cube, Cylinder, Sphere using Function
+Overloading.
+#include<iostream>
+using namespace std;
+class palindrome
+{
+public:
+    int check(int num);
+    string check(string S);
+};
+int palindrome ::check(int num)
+{
+    int n, digit, rev = 0;
+     n = num;
+
+     do
+     {
+         digit = num % 10;
+         rev = (rev * 10) + digit;
+         num = num / 10;
+     } while (num != 0);
+
+     cout << " The reverse of the number is: " << rev << endl;
+
+     if (n == rev)
+         cout << " The number is a palindrome.\n";
+     else
+         cout << " The number is not a palindrome.\n";
+
+}
+string palindrome ::check(string S)
+{
+    int length,i,flag;
+     flag = 0;
+    length = S.length();
+
+    for(i=0;i < length ;i++){
+        if(S[i] != S[length-i-1]){
+            flag = 1;
+            break;
+           }
+        }
+
+    if (flag==1) {
+        cout << S << " is not a palindrome" << endl;
+    }
+    else {
+        cout << S << " is a palindrome" << endl;
+    }
+}
+
+int main()
+{
+    int num;
+    string S;
+    palindrome n;
+    cout<<"enter the number"<<endl;
+    cin>>num;
+    cout<<"enter the string"<<endl;
+    cin>>S;
+    n.check(num);
+    n.check(S);
+    return 0;
+}
+
+
+
+
+
+
+1. Write a program to print the names of students by creating a Student class. If no
+name is passed while creating an object of the Student class, then the name should
+be "Unknown", otherwise the name should be equal to the String value passed while
+creating the object of the Student class.
+
+
+#include <iostream>
+using namespace std;
+
+class AddAmount
+{
+    int Amount;
+public:  
+    AddAmount()
+    {
+        Amount = 50;
+    }
+    AddAmount(int x)
+    {
+        Amount = 50;
+        Amount = x + Amount;
+    }
+    void print_amount()
+    {
+        cout << Amount << endl;
+    }
+};
+int main()
+{
+    AddAmount x1;
+    AddAmount x2(20);
+    x1.print_amount();
+    x2.print_amount();
+    return 0;
+}
+
+
+
+
+
+
+
+
+2.Suppose you have a Piggie Bank with an initial amount of $50 and you have to add
+some more amount to it. Create a class 'AddAmount' with a data member named
+'amount' with an initial value of $50. Now make two constructors of this class as
+follows:
+1 - without any parameter - no amount will be added to the Piggie Bank
+2 - having a parameter which is the amount that will be added to the Piggie Bank
+Create an object of the 'AddAmount' class and display the final amount in the Piggie
+Bank.
+
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Student {
+    private:
+    string name;
+
+
+    public:
+    Student(string name1="Unknown"):
+    name(name1) {}
+
+
+    void printName() {
+        cin>>name;
+        cout << name << endl;
+    }
+};
+
+int main() {
+    Student test_student("test_name"); // in brackets passed name
+    Student unknown_test_student;
+    test_student.printName();
+    unknown_test_student.printName();
+}
+
+
+
+
+
+
+
+
+
+
+

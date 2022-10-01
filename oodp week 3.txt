@@ -1,0 +1,196 @@
+
+week 3
+
+
+4. Define a class named Circle which can be constructed by a radius. The Circle class has two
+methods for computing perimeter and area, respectively.
+
+#include<iostream>
+using namespace std;
+class circle
+{
+int r;
+public:
+int area(){
+scanf("%d",&r);
+int res;
+res=3.14*r*r;
+cout<<"area ="<<res<<endl;
+}
+int peri()
+{
+    int perimeter;
+    perimeter=2*3.14*r;
+    cout<<"perimeter="<<perimeter<<endl;
+}
+};
+
+int main ()
+{
+cout<<"enter the radius"<<endl;
+circle obj;
+obj.area();
+obj.peri();
+return 0;
+}
+
+
+
+
+
+
+6. Write a program to print the area and perimeter of a triangle having sides of 3, 4 and 5
+units by creating a class named &#39;Triangle&#39; with a function to print the area and perimeter.
+
+#include<iostream>
+using namespace std;
+class triangle
+{
+int a=3;
+int b=4;
+int c=5;
+public:
+int area(){
+int res;
+res=3*4;
+cout<<"area ="<<res<<endl;
+}
+int peri()
+{
+    int perimeter;
+    perimeter=3+4+5;
+    cout<<"perimeter="<<perimeter<<endl;
+}
+};
+
+int main ()
+{
+cout<<"the area and perimeter of triangle are:"<<endl;
+triangle obj;
+obj.area();
+obj.peri();
+return 0;
+}
+
+
+
+
+
+
+8. Develop a program of class Room with attributes length, breadth and height and its object
+room1 and room2 to calculate the area and volume of a room using function.
+
+
+#include<iostream>
+using namespace std;
+class room
+{
+int l,b,h;
+public:
+int area(){
+scanf("%d %d %d",&l,&b,&h);
+int res;
+res=l*b;
+cout<<"area ="<<res<<endl;
+}
+int volume()
+{
+    int vol;
+    vol=l*b*h;
+    cout<<"volume="<<vol<<endl;
+}
+};
+
+int main ()
+{
+cout<<"enter the length breadth and height:"<<endl;
+
+room room1;
+room room2;
+room1.area();
+room1.volume();
+room2.area();
+room2.volume();
+return 0;
+}
+
+
+
+10. Find whether the student is eligible for the current year placement from the inputs student
+name, CGPA, gender (M/F), number of backlogs. Implement the above by using object
+oriented programming concept.
+
+
+
+#include<iostream>
+using namespace std;
+class studentinfo
+{
+int backlogs;
+string name;
+char gender;
+float cgpa;
+public:
+int placement(){
+cout<<"name:"<<endl;
+cin>>name;
+cout<<"cgpa:"<<endl;
+cin>>cgpa;
+cout<<"gender(f/m):"<<endl;
+cin>>gender;
+cout<<"backlogs:"<<endl;
+cin>>backlogs;
+if(backlogs==0){
+    if(cgpa>=9){
+        cout<<"eligible for placement"<<endl;
+    }
+    else{
+        cout<<"not sufficient cgpa"<<endl;
+    }
+}
+else{
+    cout<<"clear backlogs"<<endl;
+}
+}
+};
+
+int main ()
+{
+cout<<"enter the details:"<<endl;
+studentinfo obj;
+obj.placement();
+return 0;
+}
+
+
+
+
+13. Add two distances in inch-feet by creating a class named &#39;AddDistance&#39;.
+
+
+
+#include<iostream>
+using namespace std;
+class addDistance
+{
+int a,b,c,d;
+public:
+int sum(){
+cout<<"enter the distance in feet:"<<endl;
+cin>>a>>b;
+cout<<"enter the distance in inches:"<<endl;
+cin>>c>>d;
+cout<<"the distance in feet "<<a+b<<endl;
+cout<<"the distance in inches "<<c+d<<endl;
+
+}
+};
+
+int main ()
+{
+cout<<"enter the distances:"<<endl;
+addDistance obj;
+obj.sum();
+return 0;
+}
+
