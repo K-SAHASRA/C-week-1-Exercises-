@@ -1,0 +1,532 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 #include <cstring>\par
+#include <iostream>\par
+#include <string.h>\par
+ \par
+using namespace std;\par
+ \par
+// Class to implement operator overloading\par
+// function for concatenating the strings\par
+class CompareString \{\par
+ \par
+public:\par
+    // Classes object of string\par
+    char str[25];\par
+ \par
+    // Parameterized Constructor\par
+    CompareString(char str1[])\par
+    \{\par
+        // Initialize the string to class object\par
+        strcpy(this->str, str1);\par
+    \}\par
+ \par
+    // Overloading '==' under a function\par
+    // which returns integer 1/true\par
+    // if left operand string\par
+    // and right operand string are equal.\par
+    //(else return 0/false)\par
+    int operator==(CompareString s2)\par
+    \{\par
+        if (strcmp(str, s2.str) == 0)\par
+            return 1;\par
+        else\par
+            return 0;\par
+    \}\par
+// Overloading '<=' under a function\par
+    // which returns integer 1/true\par
+    // if left operand string is smaller than\par
+    // or equal to the right operand string.\par
+    // (else return 0/false)\par
+    int operator<=(CompareString s3)\par
+    \{\par
+        if (strlen(str) <= strlen(s3.str))\par
+            return 1;\par
+        else\par
+            return 0;\par
+    \}\par
+ \par
+    // Overloading '>=' under a function\par
+    // which returns integer 1/true\par
+    // if left operand string is larger than\par
+    // or equal to the right operand string.\par
+    //(else return 0/false)\par
+    int operator>=(CompareString s3)\par
+    \{\par
+        if (strlen(str) >= strlen(s3.str))\par
+            return 1;\par
+        else\par
+            return 0;\par
+    \}\par
+\};\par
+ \par
+\par
+\par
+\par
+\par
+\par
+\par
+void compare(CompareString s1, CompareString s2)\par
+\{\par
+ \par
+    if (s1 == s2)\par
+        cout << s1.str << " is equal to "\par
+             << s2.str << endl;\par
+    else \{\par
+        cout << s1.str << " is not equal to "\par
+             << s2.str << endl;\par
+        if (s1 >= s2)\par
+cout << s1.str << " is greater than "\par
+                 << s2.str << endl;\par
+        else\par
+            cout << s2.str << " is greater than "\par
+                 << s1.str << endl;\par
+    \}\par
+\}\par
+ \par
+// Testcase1\par
+void testcase1()\par
+\{\par
+    // Declaring two strings\par
+    char str1[] = "Geeks";\par
+    char str2[] = "ForGeeks";\par
+ \par
+    // Declaring and initializing the class\par
+    // with above two strings\par
+    CompareString s1(str1);\par
+    CompareString s2(str2);\par
+ \par
+    cout << "Comparing \\"" << s1.str << "\\" and \\""\par
+         << s2.str << "\\"" << endl;\par
+ \par
+    compare(s1, s2);\par
+\}\par
+ \par
+// Testcase2\par
+void testcase2()\par
+\{\par
+    // Declaring two strings\par
+    char str1[] = "Geeks";\par
+    char str2[] = "Geeks";\par
+ \par
+    // Declaring and initializing the class\par
+    // with above two strings\par
+    CompareString s1(str1);\par
+CompareString s2(str2);\par
+ \par
+    cout << "\\n\\nComparing \\"" << s1.str << "\\" and \\""\par
+         << s2.str << "\\"" << endl;\par
+ \par
+    compare(s1, s2);\par
+\}\par
+ \par
+// Driver code\par
+int main()\par
+\{\par
+    testcase1();\par
+    testcase2();\par
+ \par
+    return 0;\par
+\}\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+#include<iostream>\par
+\par
+using namespace std;\par
+\par
+int area(int);\par
+\par
+int area(int,int);\par
+\par
+float area(float);\par
+\par
+float area(float,float);\par
+\par
+int main()\par
+\par
+\{\par
+\par
+int s,l,b;\par
+\par
+float r,bs,ht;\par
+\par
+cout<<"Enter side of a square:";\par
+\par
+cin>>s;\par
+\par
+cout<<"Enter length and breadth of rectangle:";\par
+\par
+cin>>l>>b;\par
+\par
+cout<<"Enter radius of circle:";\par
+\par
+cin>>r;\par
+\par
+cout<<"Enter base and height of triangle:";\par
+\par
+cin>>bs>>ht;\par
+\par
+cout<<"Area of square is"<<area(s);\par
+\par
+cout<<"\\nArea of rectangle is "<<area(l,b);\par
+\par
+cout<<"\\nArea of circle is "<<area(r);\par
+\par
+cout<<"\\nArea of triangle is "<<area(bs,ht);\par
+\par
+\}\par
+\par
+int area(int s)\par
+\par
+\{\par
+\par
+return(s*s);\par
+\par
+\}\par
+\par
+int area(int l,int b)\par
+\par
+\{\par
+\par
+return(l*b);\par
+\par
+\}\par
+\par
+float area(float r)\par
+\par
+\{\par
+\par
+return(3.14*r*r);\par
+\par
+\}\par
+\par
+float area(float bs,float ht)\par
+\par
+\{\par
+\par
+return((bs*ht)/2);\par
+\par
+\}\par
+\par
+\par
+\par
+\par
+#include<iostream>\par
+using namespace std;\par
+#define PI 3.1416\par
+\par
+// function prototypes\par
+float volume(float length, float breadth, float height);\par
+float volume(float radius);\par
+float volume(float radius, float height);\par
+\par
+int main()\{\par
+\tab float cube_l = 40.0, cube_b = 30.0, cube_h = 10.0;\par
+\tab float sphere_r = 2.5;\par
+\tab float cylinder_r = 2.5, cylinder_h = 10.0;\par
+\tab cout<<"Volume of Cube ="<<volume(cube_l, cube_b, cube_h)<<endl;\par
+\tab cout<<"Volume of Sphere ="<<volume(sphere_r)<<endl;\par
+\tab cout<<"Volume of Cylinder ="<<volume(cylinder_r, cylinder_h)<<endl;\par
+\tab return 0;\par
+\}\par
+// function defination\par
+float volume(float length, float breadth, float height)\{\par
+\tab return length * breadth * height;\par
+\}\par
+float volume(float radius)\{\par
+\tab return (4.0/3.0) * PI * radius * radius *radius; \par
+\}\par
+float volume(float radius, float height)\{\par
+\tab return PI * radius *radius * height;\par
+\}\par
+\par
+\par
+\par
+\par
+\par
+\par
+#include<iostream>\par
+using namespace std;\par
+class measure\par
+\{\par
+        public:\par
+                void shape(int r);\par
+                void shape(int l,int b);\par
+                void shape(float t,int d,int e);\par
+                void shape(long a);\par
+                void shape(float c, long int g);\par
+                void shape(double j);\par
+                void shape(float h, double f);\par
+\};\par
+void measure::shape(int r)\par
+\{\par
+        cout<<"area of the circle is "<<3.14*r*r;\par
+\}\par
+void measure::shape(int l,int b)\par
+\{\par
+        cout<<"area of the rectangle is"<<l*b;\par
+\}\par
+void measure::shape(float t,int d,int e)\par
+\{\par
+        cout<<"area of the triangle is"<<t*d*e;\par
+\}\par
+void measure::shape(long a)\par
+\{\par
+        cout<<"area of the square is"<<a*a;\par
+\}\par
+void measure::shape(float c, long int g)\par
+\{\par
+        cout<<"Volume of the cone is "<<(1/3)*3.14*c*c*g;\par
+\}\par
+void measure::shape(double j)\par
+\{\par
+        cout<<"Volume of the sphere is "<<(4/3)*3.14*j*j*j;\par
+\}\par
+void measure::shape(float h, double f)\par
+\{\par
+        cout<<"\\nVolume of the Cylinder is "<<3.14*f*f*h;\par
+\}\par
+int main()\par
+\{\par
+        int r,d,e,l,b;\par
+        float t,c,h;\par
+        long a;\par
+        int ch;\par
+        double j,f;\par
+        long int g;\par
+        measure obj;\par
+        cout<<"\\tCALCULATION OF AREA AND VOLUME";\par
+        cout<<"\\n\\n1. area of circle";\par
+        cout<<"\\n2. area of rectangle";\par
+        cout<<"\\n3. area of triangle";\par
+        cout<<"\\n4. area of square";\par
+        cout<<"\\n5. Volume of the cone";\par
+        cout<<"\\n6. Volume of the sphere";\par
+        cout<<"\\n7. Volume of the cylinder";\par
+        cout<<"\\n\\tEnter your choice ";\par
+        cin>>ch;\par
+        switch(ch)\par
+        \{\par
+                case 1:\par
+                        cout<<"enter the value of radius of the circle \\n";\par
+                        cin>>r;\par
+ obj.shape(r);\par
+                        break;\par
+                case 2:\par
+                        cout<<"enter the sides of rectangle \\n";\par
+                        cin>>l>>b;\par
+                        obj.shape(l,b);\par
+                        break;\par
+                case 3:\par
+                        cout<<"enter the sides of triangle \\n";\par
+                        cin>>d>>e;\par
+                        obj.shape(0.5,d,e);\par
+                        break;\par
+                case 4:\par
+                        cout<<"enter the sides of square";\par
+                        cin>>a;\par
+                        obj.shape(a);\par
+                        break;\par
+                case 5:\par
+                        cout<<"\\nEnter the radius of the cone";\par
+                        cin>>c;\par
+                        cout<<"\\nEnter the height of the cone";\par
+                        cin>>g;\par
+                        obj.shape(c,g);\par
+                        break;\par
+                case 6:\par
+                        cout<<"\\nEnter the radius";\par
+                        cin>>b;\par
+                        obj.shape(b);\par
+                        break;\par
+                case 7:\par
+                        cout<<"\\nEnter the radius";\par
+                        cin>>f;\par
+                        cout<<"\\nEnter the height";\par
+                        cin>>h;\par
+                        obj.shape(h,f);\par
+                        break;\par
+                default:\par
+                        cout<<"\\nThe choice entered is a wrong choice";\par
+        \}\par
+        return 0;\par
+\}\par
+\par
+\par
+\par
+\par
+#include <iostream>\par
+using namespace std;\par
+\par
+\par
+class std_basic_info \{\par
+private:\par
+    char name[30];\par
+    int age;\par
+    char gender;\par
+\par
+public:\par
+    void getBasicInfo(void);\par
+    void putBasicInfo(void);\par
+\};\par
+\par
+\par
+void std_basic_info::getBasicInfo(void)\par
+\{\par
+    cout << "Enter student's basic information:" << endl;\par
+    cout << "Name?: ";\par
+    cin >> name;\par
+    cout << "Age?: ";\par
+    cin >> age;\par
+    cout << "Gender?: ";\par
+    cin >> gender;\par
+\}\par
+\par
+void std_basic_info::putBasicInfo(void)\par
+\{\par
+    cout << "Name: " << name << ",Age: " << age << ",Gender: " << gender << endl;\par
+\}\par
+\par
+class std_result_info : public std_basic_info \{\par
+private:\par
+    int totalM;\par
+    float perc;\par
+    char grade;\par
+\par
+public:\par
+    void getResultInfo(void);\par
+    void putResultInfo(void);\par
+\};\par
+\par
+\par
+void std_result_info::getResultInfo(void)\par
+\{\par
+    cout << "Enter student's result information:" << endl;\par
+    cout << "Total Marks?: ";\par
+    cin >> totalM;\par
+    perc = (float)((totalM * 100) / 500);\par
+    cout << "Grade?: ";\par
+    cin >> grade;\par
+\}\par
+\par
+void std_result_info::putResultInfo(void)\par
+\{\par
+    cout << "Total Marks: " << totalM << ",Percentage: " << perc << ",Grade: " << grade << endl;\par
+\}\par
+\par
+int main()\par
+\{\par
+    \par
+    std_result_info std;\par
+\par
+ \par
+    std.getBasicInfo();\par
+    std.getResultInfo();\par
+\par
+\par
+    std.putBasicInfo();\par
+    std.putResultInfo();\par
+\par
+    return 0;\par
+\}\par
+\par
+\par
+\par
+\par
+\par
+#include<iostream>\par
+#include<string.h>\par
+using namespace std;\par
+\par
+class func\par
+\{\par
+        public:\par
+                void pal(int );\par
+                void pal(char c[]);\par
+\};\par
+void func :: pal(int n)\par
+\{\par
+        int n1,sum,a;\par
+        n1=n;\par
+        sum=0;\par
+\par
+        do\par
+        \{\par
+                sum=sum*10;\par
+                a=n%10;\par
+                sum=sum+a;\par
+                n=n/10;\par
+        \}while(n>0);\par
+        if(sum==n1)\par
+                cout<<"\\n it is Palindrome";\par
+        else\par
+                cout<<"\\n it is not a palindrome";\par
+\par
+\}\par
+void func :: pal(char c[])\par
+\{\par
+        int l=strlen(c);\par
+char b[10];\par
+        int i,j;\par
+        for(i=0,j=l-1;i<l;i++,j--)\par
+        \{\par
+                b[i]=c[j];\par
+        \}\par
+        b[i]=' ';\par
+        if(strcmp(c,b)==0)\par
+        \{cout<<"\\nThe entered text is palindrome";\par
+        \}\par
+        else\par
+        \{cout<<"\\n the entered text is not a palindrome";\par
+        \}\par
+\}\par
+int main()\par
+\{\par
+        char c[10];\par
+        int k,r,v;\par
+        func p;\par
+        do\par
+        \{\par
+                cout<<"palindrome"<<endl;\par
+                cout<<"1.for interger"<<endl;\par
+                cout<<"2.for character"<<endl;\par
+                cout<<"\\nenter the choice\\n"<<endl;\par
+                cin>>r;\par
+                switch(r)\par
+                \{\par
+                        case 1:\par
+                                cout<<"Enter the number";\par
+                                cin>>k;\par
+                                p.pal(k);\par
+                                break;\par
+                        case 2:\par
+                                cout<<"\\nEnter the string to be checked"<<endl;\par
+                                cin>>c;\par
+                                p.pal(c);\par
+                                break;\par
+                \}\par
+                cout<<"\\ndo you want to continue? (1/0)"<<endl;\par
+                cin>>v;\par
+        \}while(v==1);\par
+        return 0;\par
+\}\par
+}
+ 
